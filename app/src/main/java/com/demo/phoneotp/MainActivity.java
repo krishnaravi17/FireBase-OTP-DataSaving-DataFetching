@@ -1,5 +1,6 @@
 package com.demo.phoneotp;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     EditText name, age, dob, email;
-    Button save, showDetails;
+    Button save, showDetails, MAP;
     DatabaseReference database;
     List<Member> memberList = new ArrayList<>();
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         save = findViewById(R.id.save);
         showDetails = findViewById(R.id.showDetails);
+        MAP = findViewById(R.id.MAP);
 
         database = FirebaseDatabase.getInstance().getReference();
 
@@ -100,6 +102,15 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+        MAP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -51,5 +51,11 @@
         android:layout_height="wrap_content"
         android:text="Show Details"/>
 
+  <Button
+      android:layout_width="match_parent"
+      android:id="@+id/MAP"
+      android:layout_height="wrap_content"
+      android:text="MAP"/>
+
 
 </LinearLayout>
